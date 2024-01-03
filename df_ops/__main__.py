@@ -8,6 +8,8 @@ from io import StringIO
 import numpy as np
 import pandas as pd
 
+import df_ops
+
 
 @dataclass
 class Csv:
@@ -72,7 +74,7 @@ def create_dataframe_from_format(data_str: str) -> pd.DataFrame:
     return df
 
 
-class DataFrameOperations:
+class DataFrameOperations(df_ops.DataFrameOperations):
     def add_log_column(self, df: str, column_name: str) -> str:
         """
         Add a new column to the DataFrame with the log of the specified column.
