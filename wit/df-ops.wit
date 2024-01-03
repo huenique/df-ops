@@ -1,0 +1,12 @@
+world df-ops {
+  export DataFrameOperations {
+    addLogColumn: func(df: string, columnName: string) -> result<string, string>;
+    calculateMeans: func(df: string) -> result<string, string>;
+    multiplyDataFrame: func(df: string, factor: float64) -> result<string, string>;
+    readDataFrame: func(path: string) -> result<string, string>;
+  }
+
+  type Format = Csv | Json;
+  type Csv = { data: string };
+  type Json = { data: string };
+}
